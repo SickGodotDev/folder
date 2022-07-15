@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { exec } = require("child_process");
-let filepath = "./index.bf"
+const filepath = "./index.bf"
 const execute = (command) => {exec(command, (error, stdout, stderr) => {if (error) {console.log(`error: ${error.message}`);return;}if (stderr) {console.log(`stderr: ${stderr}`);return;}console.log(stdout)})};
 if(!fs.existsSync("./index.bf")){fs.writeFileSync(filepath,"");process.exit(1);}
 const code = fs.readFileSync(filepath,{encoding: "utf8",flag:"r"});
